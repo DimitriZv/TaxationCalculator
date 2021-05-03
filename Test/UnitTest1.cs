@@ -5,18 +5,21 @@ using Library;
 
 namespace Test
 {
-    [TestClass]
+    //"2019-20"  "2018-19"   "2017-18"
+[TestClass]
     public class UnitTest1
     {
         [TestMethod]
         public void TestMethod1()
         {
-            string input = "10.50";
+            string inputAmount = "10.50";
+            string inputYear = "2017-18";
+            bool status = true;
             string expectResult = "Your Income after $0.00 Tax is $10.50";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -25,12 +28,14 @@ namespace Test
         [TestMethod]
         public void TestMethod2()
         {
-            string input = "10000";
-            string expectResult = "Your Income after $0.00 Tax is $10000.00";
+            string inputAmount = "10000";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $0.00 Tax is $10,000.00";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -38,12 +43,14 @@ namespace Test
         [TestMethod]
         public void TestMethod3()
         {
-            string input = "20000";
-            string expectResult = "Your Income after $342.00 Tax is $19658.00";
+            string inputAmount = "20000";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $342.00 Tax is $19,658.00";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -51,12 +58,14 @@ namespace Test
         [TestMethod]
         public void TestMethod4()
         {
-            string input = "45000";
-            string expectResult = "Your Income after $6172.00 Tax is $38828.00";
+            string inputAmount = "45000";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $6,172.00 Tax is $38,828.00";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -64,12 +73,14 @@ namespace Test
         [TestMethod]
         public void TestMethod5()
         {
-            string input = "151111";
-            string expectResult = "Your Income after $43543.07 Tax is $107567.93";
+            string inputAmount = "151111";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $43,543.07 Tax is $107,567.93";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -77,12 +88,14 @@ namespace Test
         [TestMethod]
         public void TestMethod6()
         {
-            string input = "199955.55";
-            string expectResult = "Your Income after $63212.00 Tax is $136743.55";
+            string inputAmount = "199955.55";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $63,212.00 Tax is $136,743.55";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -90,12 +103,14 @@ namespace Test
         [TestMethod]
         public void TestMethod7()
         {
-            string input = "0";
+            string inputAmount = "0";
+            string inputYear = "2017-18";
+            bool status = true;
             string expectResult = "Your Income after $0.00 Tax is $0.00";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -103,12 +118,14 @@ namespace Test
         [TestMethod]
         public void TestMethod8()
         {
-            string input = "18200";
-            string expectResult = "Your Income after $0.00 Tax is $18200.00";
+            string inputAmount = "18200";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $0.00 Tax is $18,200.00";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -116,12 +133,14 @@ namespace Test
         [TestMethod]
         public void TestMethod9()
         {
-            string input = "37000";
-            string expectResult = "Your Income after $3572.00 Tax is $33428.00";
+            string inputAmount = "37000";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $3,572.00 Tax is $33,428.00";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -129,12 +148,14 @@ namespace Test
         [TestMethod]
         public void TestMethod10()
         {
-            string input = "37001";
-            string expectResult = "Your Income after $3572.33 Tax is $33428.68";
+            string inputAmount = "37001";
+            string inputYear = "2017-18";
+            bool status = true;
+            string expectResult = "Your Income after $3,572.33 Tax is $33,428.68";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -142,12 +163,14 @@ namespace Test
         [TestMethod]
         public void TestMethod11()
         {
-            string input = "abc";
+            string inputAmount = "abc";
+            string inputYear = "2017-18";
+            bool status = true;
             string expectResult = "Error - Enter Numbers Only";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -155,12 +178,14 @@ namespace Test
         [TestMethod]
         public void TestMethod12()
         {
-            string input = "";
+            string inputAmount = "";
+            string inputYear = "2017-18";
+            bool status = true;
             string expectResult = "Error – Please enter a value";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -168,12 +193,14 @@ namespace Test
         [TestMethod]
         public void TestMethod13()
         {
-            string input = " ";
+            string inputAmount = " ";
+            string inputYear = "2017-18";
+            bool status = true;
             string expectResult = "Error – Please enter a value";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);
@@ -181,12 +208,14 @@ namespace Test
         [TestMethod]
         public void TestMethod14()
         {
-            string input = "-100";
+            string inputAmount = "-100";
+            string inputYear = "2017-18";
+            bool status = true;
             string expectResult = "Error – value cannot be negative";
             string actualResult;
 
             //step 2 - Act
-            actualResult = Calculate.Calculating(input);
+            actualResult = Calculate.Calculating(inputAmount, inputYear, status);
 
             //step 3 - Assert
             Assert.AreEqual(expectResult, actualResult);

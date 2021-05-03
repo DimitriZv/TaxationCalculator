@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaxCalculator;
 using Library; //our program Library (not from .NET)
-
+using System.Globalization;
 
 namespace TaxCalculator
 {
@@ -19,15 +19,26 @@ namespace TaxCalculator
         {
             InitializeComponent();
         }
-
+        
         private void tntCalculate_Click(object sender, EventArgs e)
         {
-            string input = (txtInput.Text);
+            string inputAmount = (txtInput.Text);
+            string inputYear = (yearInput.Text);
+            bool residentFull = fullYearResident.Checked; //bool resedentNotFull = notFullYearResident.Checked;
 
-            string result = Calculate.Calculating(input);
+            string result = Calculate.Calculating(inputAmount, inputYear, residentFull);
+            
+            lbl_result.Text = result; //MessageBox.Show(result);
+        }
 
-            MessageBox.Show(result);
+        private void fullYearResident_CheckedChanged(object sender, EventArgs e)
+        {
+            notFullYearResident.Checked = !fullYearResident.Checked;
+        }
 
+        private void notFullYearResident_CheckedChanged(object sender, EventArgs e)
+        {
+            fullYearResident.Checked = !notFullYearResident.Checked;
         }
     }
 }
