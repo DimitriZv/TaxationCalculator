@@ -29,7 +29,7 @@ namespace Library
                     double inputCurrent = after(inputDoubleAmount);
                     //string msg = "Your Income after " + "$" + (result.ToString("0.00")) + " Tax is $" + (input1 - result).ToString("0.00");
                     //string msg = "Your Income after " + "$" + currenceView(result) + " Tax is $" + currenceView(inputCurrent- result);
-                    string msg = "Your Tax is " + "$" + currenceView(result) + " and Income is $" + currenceView(inputCurrent- result);
+                    string msg = "The estimated tax on your taxable income is " + "$" + currenceView(result) + "\nYour estimated income after tax is $" + currenceView(inputCurrent- result);
                     return msg;
                 }
             }
