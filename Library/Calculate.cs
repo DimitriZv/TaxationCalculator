@@ -15,7 +15,15 @@ namespace Library
             int inputIntYear = inputYearIndex(inputYear);
             bool successAmount = double.TryParse(amount, out inputDoubleAmount); //bool successYear = int.TryParse(inputYear, out inputIntYear);
             
-            if (isEmpty(amount) || isEmpty(inputYear)) return "Error – Please enter a value";
+            if (isEmpty(amount))
+            {
+                return "Error: Please input an amount.";
+            }
+
+            if (isEmpty(inputYear))
+            {
+                return "Error: Please select a year.";
+            }
 
             if (successAmount)
             {
