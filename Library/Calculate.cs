@@ -28,7 +28,8 @@ namespace Library
                     double result = taxByYear(inputDoubleAmount, inputIntYear, resident);
                     double inputCurrent = after(inputDoubleAmount);
                     //string msg = "Your Income after " + "$" + (result.ToString("0.00")) + " Tax is $" + (input1 - result).ToString("0.00");
-                    string msg = "Your Income after " + "$" + currenceView(result) + " Tax is $" + currenceView(inputCurrent- result);
+                    //string msg = "Your Income after " + "$" + currenceView(result) + " Tax is $" + currenceView(inputCurrent- result);
+                    string msg = "Your Tax is " + "$" + currenceView(result) + " and Income is $" + currenceView(inputCurrent- result);
                     return msg;
                 }
             }
