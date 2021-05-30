@@ -18,17 +18,16 @@ public class UnitTestResident1718
         }
         //generate different ranges of values and then test all of them
 
-        public double TestMethod()
+        public Unit TestMethod()
         {
+            Unit unit = new Unit();
             //count correct answers and calculate correct rate
             double correctAnswer = 0.0;
-
-            Console.WriteLine("Start Automation Testing Tool...");
-            Console.WriteLine("YEAR : "+ inputYear+ "     STATUS : resident");
+            unit.setYear(inputYear);
+            unit.setStatus("resident");
             //step 1 : generate random testing values
             for (int index = 0;index <= ranges.Length;index++)
             {
-                Console.WriteLine("Test case "+ (index+1) +"---");
                 double testAmount;
                 if (index == 0)
                 {
@@ -36,30 +35,33 @@ public class UnitTestResident1718
                 }
                 else if(index == ranges.Length)
                 {
-                    testAmount = GenerateValues(ranges[index-1] + 1,Int32.MaxValue);
+                    testAmount = GenerateValues(ranges[index-1] + 1,Int32.MaxValue/1000);
                 }
                 else
                 {
                     testAmount = GenerateValues(ranges[index-1] + 1,ranges[index]);
                 }
-                Console.WriteLine("Test case value: " + testAmount);
                 //get expected values and the values from the tax calculator
                 double expectedAmount = expectedResult(index, testAmount);
-                
-                //print out the final result
-                Console.WriteLine("Expected result value: " + expectedAmount);
-                double taxAmount = Calculate.taxByYear(testAmount, Calculate.inputYearIndex(inputYear), status);
-                Console.WriteLine("Value by tax calculator: " + taxAmount);
+                double actualAmount = Calculate.taxByYear(testAmount, Calculate.inputYearIndex(inputYear), status);
                 //step 3 - Assert
-                if (expectedAmount == taxAmount)
+                if (expectedAmount == actualAmount)
                 {
                     correctAnswer += 1;
+                    unit.addIncomeValues(testAmount);
+                    unit.addExpectedValues("		Your expected income after tax is $" + expectedAmount);
+                    unit.addActualValues("		Through the tax calculator, Your income value after tax is $" + actualAmount);
+                }
+                else
+                {
+                    unit.addFIncomeValues(testAmount);
+                    unit.addFExpectedValues("		Your expected income after tax should be $" + expectedAmount);
+                    unit.addFActualValues("		Through the tax calculator, Your actual income after tax is $" + actualAmount);
                 }
             }
-            double correctRate = correctAnswer / (ranges.Length + 1);
-            Console.WriteLine("The tax calculator got "+correctAnswer+" out of " + (ranges.Length+1) + " correct");
-            Console.WriteLine("Correct rate of testing cases: " + correctRate * 100 + "%");
-            return correctRate;
+            unit.setTotalTest(ranges.Length + 1);
+            unit.setPassedTest(correctAnswer);
+            return unit;
         }
         //get the expected result
         public double expectedResult(int indexValue, double testAmount)
