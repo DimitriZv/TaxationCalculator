@@ -54,7 +54,7 @@ namespace Library
 					Console.WriteLine("YEAR : " + units[i].getYear() + "     STATUS : " + units[i].getStatus());
 					for (int index = 0; index < units[i].getLength(); index++)
 					{
-						Console.WriteLine("Test Result " + allIndex + ":");
+						Console.WriteLine("Test Case " + allIndex + ":");
 						Console.WriteLine("The tested income is $" + units[i].getIncomeValue(index));
 						Console.WriteLine(units[i].getExpectedValue(index));
 						Console.WriteLine(units[i].getActualValue(index));
@@ -84,7 +84,7 @@ namespace Library
 					{
 						for (int index = 0; index < units[i].getFalseLength(); index++)
 						{
-							Console.WriteLine("Failed Result " + totalIndex + ":");
+							Console.WriteLine("Failed Test Case " + totalIndex + ":");
 							Console.WriteLine("The tested income is $" + units[i].getFIncomeValue(index));
 							Console.WriteLine(units[i].getFExpectedValue(index));
 							Console.WriteLine(units[i].getFActualValue(index));
