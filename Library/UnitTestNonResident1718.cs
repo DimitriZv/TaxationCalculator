@@ -4,7 +4,7 @@ using Library;
 namespace Library
 {   
 // non resident 2017-2018 test cases
-public class UnitTestResident1718
+public class UnitTestNonResident1718
     {
         private Random random = new Random();
         private string inputYear = "2017-18";
