@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculate.cs" />
+    <Compile Include="TestStrings.cs" />
     <Compile Include="TestTool.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="UnitTestNonResident1718.cs" />
