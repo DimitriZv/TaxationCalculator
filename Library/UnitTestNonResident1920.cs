@@ -7,7 +7,7 @@ namespace Library
 public class UnitTestNonResident1920
     {
         private Random random = new Random();
-        private string inputYear = "2018-19";
+        private string inputYear = "2019-20";
         private bool status =  false;
         private int[] ranges = { 0, 90000, 180000 };
 
