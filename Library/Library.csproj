@@ -41,6 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculate.cs" />
+    <Compile Include="TestTool.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitTestNonResident1718.cs" />
+    <Compile Include="UnitTestNonResident1819.cs" />
+    <Compile Include="UnitTestNonResident1920.cs" />
+    <Compile Include="UnitTestResident1718.cs" />
+    <Compile Include="UnitTestResident1819.cs" />
+    <Compile Include="UnitTestResident1920.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
