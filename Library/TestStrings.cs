@@ -1,24 +1,28 @@
-﻿using Library;
+using Library;
 using System;
 using System.Globalization;
 
-namespace TestStringsMethods
+namespace Library
 {
-    class TestStringsMethods
+    public class TestStrings
     {
         public static void PrintConsole(string methodName, string actualResult, string expectResult, bool resultBool)
         {
             string resultShow = "";
+            Console.WriteLine("Manual Test Case " + methodName + ": " + resultShow);
+            Console.WriteLine("    Expected output: " + expectResult);
+            Console.WriteLine("    Actual output: " + actualResult);
             if (resultBool == true)
-            { resultShow = "passed"; }
-            else { resultShow = "failed"; }
-
-            Console.WriteLine("Manual Test " + methodName + " is: " + resultShow);
-            Console.WriteLine("    expected out: " + expectResult);
-            Console.WriteLine("    actual out: " + actualResult);
+            {
+                resultShow = "Test passed";
+            }
+            else
+            {
+                resultShow = "Test failed";
+            }
         }
 
-        public static void TestMethod1()
+        public static bool TestMethod1()
         {
             //spet 1 - Initialize
             string inputAmount = "abc";
@@ -32,11 +36,11 @@ namespace TestStringsMethods
 
             //step 3 - Assert
             bool resultBool = expectResult.Equals(actualResult);
-
-            PrintConsole("TestMethod1", actualResult, expectResult, resultBool);
+            PrintConsole("1", actualResult, expectResult, resultBool);
+            return resultBool;
         }
 
-        public static void TestMethod2()
+        public static bool TestMethod2()
         {
             //spet 1 - Initialize
             string inputAmount = "";
@@ -51,10 +55,11 @@ namespace TestStringsMethods
             //step 3 - Assert
             bool resultBool = expectResult.Equals(actualResult);
 
-            PrintConsole("TestMethod1", actualResult, expectResult, resultBool);
+            PrintConsole("2", actualResult, expectResult, resultBool);
+            return resultBool;
         }
 
-        public static void TestMethod3()
+        public static bool TestMethod3()
         {
             //spet 1 - Initialize
             string inputAmount = " ";
@@ -69,10 +74,11 @@ namespace TestStringsMethods
             //step 3 - Assert
             bool resultBool = expectResult.Equals(actualResult);
 
-            PrintConsole("TestMethod1", actualResult, expectResult, resultBool);
+            PrintConsole("3", actualResult, expectResult, resultBool);
+            return resultBool;
         }
 
-        public static void TestMethod4()
+        public static bool TestMethod4()
         {
             //spet 1 - Initialize
             string inputAmount = "-100";
@@ -87,10 +93,11 @@ namespace TestStringsMethods
             //step 3 - Assert
             bool resultBool = expectResult.Equals(actualResult);
 
-            PrintConsole("TestMethod1", actualResult, expectResult, resultBool);
+            PrintConsole("4", actualResult, expectResult, resultBool);
+            return resultBool;
         }
 
-        public static void TestMethod5()
+        public static bool TestMethod5()
         {
             //spet 1 - Initialize
             string inputAmount = "10000";
@@ -105,7 +112,8 @@ namespace TestStringsMethods
             //step 3 - Assert
             bool resultBool = expectResult.Equals(actualResult);
 
-            PrintConsole("TestMethod1", actualResult, expectResult, resultBool);
+            PrintConsole("5", actualResult, expectResult, resultBool);
+            return resultBool;
         }
     }
 }
