@@ -21,6 +21,7 @@ namespace Library
             Console.WriteLine("Manual Test Case " + methodName + ": " + resultShow);
             Console.WriteLine("    Expected output: " + expectResult);
             Console.WriteLine("    Actual output: " + actualResult);
+            Console.WriteLine(" ");
         }
 
         public static bool TestMethod1()
