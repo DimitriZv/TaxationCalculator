@@ -9,9 +9,7 @@ namespace Library
         public static void PrintConsole(string methodName, string actualResult, string expectResult, bool resultBool)
         {
             string resultShow = "";
-            Console.WriteLine("Manual Test Case " + methodName + ": " + resultShow);
-            Console.WriteLine("    Expected output: " + expectResult);
-            Console.WriteLine("    Actual output: " + actualResult);
+            
             if (resultBool == true)
             {
                 resultShow = "Test passed";
@@ -20,6 +18,9 @@ namespace Library
             {
                 resultShow = "Test failed";
             }
+            Console.WriteLine("Manual Test Case " + methodName + ": " + resultShow);
+            Console.WriteLine("    Expected output: " + expectResult);
+            Console.WriteLine("    Actual output: " + actualResult);
         }
 
         public static bool TestMethod1()
