@@ -14,7 +14,14 @@ namespace Library
 		public double printTest()
         {
 			//start the testing tool
-			Console.WriteLine("Start Automation Testing Tool...");
+			Console.WriteLine("Start Manual Test Cases...");
+			checkManualTestCases(TestStrings.TestMethod1());
+			checkManualTestCases(TestStrings.TestMethod2());
+			checkManualTestCases(TestStrings.TestMethod3());
+			checkManualTestCases(TestStrings.TestMethod4());
+			checkManualTestCases(TestStrings.TestMethod5());
+
+			Console.WriteLine("\nStart Automation Testing Tool...");
 
 			//run different test case classes based on the year and residency status
 			UnitTestResident1718 unitTest1 = new UnitTestResident1718();
@@ -102,5 +109,13 @@ namespace Library
 			totalPassedTestCases += unit.getPassedTest();
 			units.Add(unit);
 		}
+		public void checkManualTestCases(bool isPassed)
+        {
+			totalTestCases += 1;
+			if (isPassed == true)
+            {
+				totalPassedTestCases += 1;
+			}
+        }
     }
 }
