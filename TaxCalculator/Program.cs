@@ -16,8 +16,8 @@ namespace TaxCalculator
         static void Main()
         {
             //start the testing before running the tax calculator
-            UnitTestResident1718 unitTest = new UnitTestResident1718();
-            double rate = unitTest.TestMethod();
+            TestTool testTool = new TestTool();
+            double rate = testTool.printTest();
             if (rate < 1)
             {
                 Console.WriteLine("Fail the test");
